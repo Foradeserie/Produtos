@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Valor Total de Produtos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>
+    Opcões
+  </h1>
+<p>
+   'Produto A', preco: 10.0  <br>
+   'Produto B', preco: 20.0  <br>
+   'Produto C', preco: 15.0
+
+</p>
+
+<h1>Valor Total de Produtos</h1>
+
+<form id="produtos">
+  <label for="codigo">Selecione um produto:</label>
+  <select id="codigo">
+    <option value="1">Produto A</option>
+    <option value="2">Produto B</option>
+    <option value="3">Produto C</option>
+  </select>
+  <label for="quantidade">Informe a quantidade:</label>
+  <input type="number" id="quantidade" min="1" value="1">
+  <button type="button" onclick="calcularTotal()">Calcular</button>
+</form>
+
+<p id="resultado"></p>
+
+<script>
+  // Definindo a lista de produtos com códigos e preços
+  const produtos = [
+    { codigo: 1, nome: 'Produto A', preco: 10.0 },
+    { codigo: 2, nome: 'Produto B', preco: 20.0 },
+    { codigo: 3, nome: 'Produto C', preco: 15.0 },
+  ];
+
+  function calcularTotal() {
+    const codigoProduto = parseInt(document.getElementById('codigo').value);
+    const quantidade = parseInt(document.getElementById('quantidade').value);
+
+    let valorTotal = 0;
+
+    switch (codigoProduto) {
+      case 1:
+        valorTotal = produtos[0].preco * quantidade;
+        break;
+      case 2:
+        valorTotal = produtos[1].preco * quantidade;
+        break;
+      case 3:
+        valorTotal = produtos[2].preco * quantidade;
+        break;
+     
+        return;
+    }
+
+    document.getElementById('resultado').innerText = `Valor total para ${produtos[codigoProduto - 1].nome}: R$ ${valorTotal.toFixed(2)}`;
+  }
+</script>
+
+</body>
+</html>

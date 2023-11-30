@@ -1,0 +1,25 @@
+body {
+  background-color: aquamarine;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    position: relative;
+    left: 40%;
+  }
+
+label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  button{
+    position: relative;
+    top: 60px;
+    right: 120px;
+    background-color: blueviolet;
+    color: white;
+    border: none;
+  }
+
+
+  
